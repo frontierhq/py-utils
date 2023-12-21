@@ -1,0 +1,11 @@
+# ide
+.env
+.vscode
+
+# python
+.venv
+__pycache__
+dist/
+py_utils.egg-info/
+
+# other
