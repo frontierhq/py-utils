@@ -6,6 +6,7 @@ authors = [
     {name = "Fraser Davidson",email = "fraser@frontierhq.com"}
 ]
 readme = "README.md"
+repository = "https://github.com/frontierhq/py-utils"
 requires-python = ">=3.11"
 dependencies = [
     "python-terraform (>=0.10.1,<0.11.0)"

@@ -1,11 +1,18 @@
 from python_terraform import IsFlagged, Terraform
 
 
-def init_terraform(working_dir: str, workspace: str = None):
+def init_terraform(
+    working_dir: str,
+    backend_config: dict = None,
+    workspace: str = None,
+):
     terraform = Terraform(working_dir=working_dir)
 
     print("initialising terraform")
-    return_code, _, _ = terraform.init()
+    return_code, _, _ = terraform.init(
+        backend_config=backend_config,
+        capture_output=False,
+    )
     if return_code != 0:
         exit(return_code)
 

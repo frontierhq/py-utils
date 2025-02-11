@@ -14,5 +14,5 @@ install_ci:
 	poetry sync
 
 test:
-	poetry run ruff check src
-	poetry run ruff format --check --diff src
+	poetry run ruff check py_utils
+	poetry run ruff format --check --diff py_utils
