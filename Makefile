@@ -1,16 +1,18 @@
+.DEFAULT_GOAL := test
+
+build:
+	poetry build
+
 clean:
-	rm -rf build dist *.egg-info
+	-rm -rf dist/
 
 install:
-	pipenv install --dev
-	pipenv run pre-commit install
+	poetry install --all-groups
+	poetry run pre-commit install
 
 install_ci:
-	pipenv sync
-
-release:
-	pipenv run python setup.py sdist
-	pipenv run twine upload dist/*
+	poetry sync
 
 test:
-	pipenv run flake8 py-utils
+	poetry run ruff check src
+	poetry run ruff format --check --diff src
