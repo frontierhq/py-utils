@@ -2,7 +2,7 @@ import os
 from jinja2 import Environment, FileSystemLoader
 
 
-def render_jinja_templates(context: dict, working_dir: str):
+def render_jinja_templates(working_dir: str, context: dict = {}):
     print(f"rendering jinja templates in '{working_dir}'")
     env = Environment(
         loader=FileSystemLoader(
