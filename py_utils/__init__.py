@@ -1,4 +1,5 @@
 from .apply_terraform import apply_terraform
+from .convert_str_to_bool import convert_str_to_bool
 from .get_azure_short_region import get_azure_short_region
 from .get_env_value import get_env_value
 from .get_version_from_file import get_version_from_file
@@ -9,6 +10,7 @@ from .test_terraform import test_terraform
 
 __all__ = (
     apply_terraform,
+    convert_str_to_bool,
     get_azure_short_region,
     get_env_value,
     get_version_from_file,
