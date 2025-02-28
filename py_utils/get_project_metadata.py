@@ -2,7 +2,7 @@ import tomllib
 import os
 
 
-def get_metadata():
+def get_project_metadata():
     with open(os.path.join(os.getcwd(), "pyproject.toml"), "rb") as f:
         data = tomllib.load(f)
 
