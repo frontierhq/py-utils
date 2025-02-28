@@ -1,4 +1,4 @@
-def convert_str_to_bool(input: str, allow_empty: bool = False) -> bool:
+def str_to_bool(input: str, allow_empty: bool = False) -> bool:
     true_values = {"yes", "true", "t", "1", "y"}
     false_values = {"no", "false", "f", "0", "n"}
 
