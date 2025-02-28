@@ -9,6 +9,7 @@ def apply_terraform(
     plan_only: bool = False,
     **kwargs: dict,
 ) -> dict:
+    print("applying terraform")
     temp_dir_path = TemporaryDirectory()
     terraform_plan_file_path = os.path.join(temp_dir_path.name, "main.tfplan")
     return_code, _, _ = terraform.plan(

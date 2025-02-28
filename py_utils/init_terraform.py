@@ -8,7 +8,7 @@ def init_terraform(
 ):
     terraform = Terraform(working_dir=working_dir)
 
-    print("initialising terraform")
+    print(f"initialising terraform in '{working_dir}'")
     return_code, _, _ = terraform.init(
         capture_output=False,
         **kwargs,
