@@ -5,24 +5,7 @@ on:
   workflow_call:
 
 jobs:
-  # preflight:
-  #   runs-on: ubuntu-latest
-  #   outputs:
-  #     python_version: ${{ steps.get_python_version.outputs.python_version }}
-  #   steps:
-  #     - uses: actions/checkout@v4
-
-  #     - id: get_python_version
-  #       name: Get Python version
-  #       run: |
-  #         set -euo pipefail
-
-  #         python_version=$(cat ${GITHUB_WORKSPACE}/.python-version)
-  #         echo "Python version: ${python_version}"
-  #         echo "python_version=$python_version" >> "$GITHUB_OUTPUT"
-
   build:
-    # needs: preflight
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,21 +20,7 @@ jobs:
           enable-cache: true
           cache-dependency-glob: uv.lock
 
-      # - id: cache-pipenv
-      #   name: Cache virtual envs
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: ~/.local/share/virtualenvs
-      #     key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}-dev
-
-      # - name: Cache virtual envs
-      #   uses: astral-sh/setup-uv@v5
-      #   with:
-      #     enable-cache: true
-      #     cache-dependency-glob: uv.lock
-
       - name: Install
-        # if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: make install
         env:
           CI: true
