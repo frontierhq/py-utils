@@ -6,7 +6,7 @@ def get_azure_short_region(region: str) -> str:
         case "ukwest":
             short_region = "ukw"
         case _:
-            raise ValueError(f"Unknown region: {region}")
+            raise ValueError(f"unknown region: {region}")
     return short_region
 
 

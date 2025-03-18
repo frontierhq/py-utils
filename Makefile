@@ -1,18 +1,19 @@
 .DEFAULT_GOAL := test
 
 build:
-	poetry build
+	uv build
 
 clean:
 	-rm -rf dist/
 
 install:
-	poetry install --all-groups
-	poetry run pre-commit install
-
-install_ci:
-	poetry sync
+ifeq ($(CI),true)
+	uv sync --frozen
+else
+	uv sync
+	uv run pre-commit install
+endif
 
 test:
-	poetry run ruff check py_utils
-	poetry run ruff format --check --diff py_utils
+	uv run ruff check py_utils
+	uv run ruff format --check --diff py_utils

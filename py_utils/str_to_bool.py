@@ -6,7 +6,7 @@ def str_to_bool(input: str, allow_none: bool = False) -> bool:
         if allow_none:
             return False
 
-        raise ValueError("Input cannot be None")
+        raise ValueError("input cannot be None")
 
     input_lower = input.lower()
 
@@ -15,7 +15,7 @@ def str_to_bool(input: str, allow_none: bool = False) -> bool:
     elif input_lower in false_values:
         return False
     else:
-        raise ValueError(f'Cannot convert "{input_lower}" to bool')
+        raise ValueError(f'cannot convert "{input_lower}" to bool')
 
 
 def _test():
