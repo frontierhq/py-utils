@@ -1,4 +1,4 @@
-from get_azure_short_region import get_azure_short_region
+from py_utils.get_azure_short_region import get_azure_short_region
 
 
 def get_terraform_azurerm_backend_config(

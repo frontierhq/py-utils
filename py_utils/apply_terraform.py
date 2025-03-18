@@ -9,7 +9,7 @@ def apply_terraform(
     plan_only: bool = False,
     **kwargs: dict,
 ) -> dict:
-    print("applying terraform")
+    print("planning terraform changes")
     temp_dir_path = TemporaryDirectory()
     terraform_plan_file_path = os.path.join(temp_dir_path.name, "main.tfplan")
     return_code, _, _ = terraform.plan(
@@ -20,7 +20,12 @@ def apply_terraform(
     if return_code != 0 and return_code != 2:
         exit(return_code)
 
+    if return_code == 0:
+        print("no changes to apply")
+        return terraform.output()
+
     if not plan_only:
+        print("applying terraform changes")
         return_code, _, _ = terraform.apply(
             dir_or_plan=terraform_plan_file_path,
             var=None,
