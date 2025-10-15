@@ -1,5 +1,4 @@
 import os
-import shutil
 from python_terraform import Terraform
 from tempfile import TemporaryDirectory
 
@@ -34,7 +33,7 @@ def apply_terraform(
         if return_code != 0:
             exit(return_code)
 
-    shutil.rmtree(temp_dir_path.name)
+    temp_dir_path.cleanup()
 
     return terraform.output()
 

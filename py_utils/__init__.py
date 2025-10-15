@@ -1,5 +1,7 @@
 from .apply_terraform import apply_terraform
 from .destroy_terraform import destroy_terraform
+from .exec import exec
+from .format_terraform import format_terraform
 from .get_azure_short_region import get_azure_short_region
 from .get_env_value import get_env_value
 from .get_project_metadata import get_project_metadata
@@ -14,6 +16,8 @@ from .test_terraform import test_terraform
 __all__ = (
     apply_terraform,
     destroy_terraform,
+    exec,
+    format_terraform,
     get_azure_short_region,
     get_env_value,
     get_project_metadata,

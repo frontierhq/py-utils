@@ -18,7 +18,7 @@ def init_terraform(
 
     if workspace is not None:
         print(f"selecting workspace {workspace}")
-        return_code, x, y = terraform.cmd(
+        return_code, _, _ = terraform.cmd(
             "workspace select",
             workspace,
             capture_output=False,

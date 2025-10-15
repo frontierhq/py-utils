@@ -18,4 +18,4 @@ To update to the `0.2.0` tag:
 
 To update to a local copy:
 
-`uv pip install -e ../py-utils`
+`uv add --editable ../py-utils`
